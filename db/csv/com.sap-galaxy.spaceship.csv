@@ -1,0 +1,3 @@
+ID;shipName;crewCapacity;engineType;sector;planet;moon;orbitAltitude;galaxyCode
+8f1c2a10-4b3e-4c2d-9a1f-1a2b3c4d5e01;Andromeda Runner;6;Warp Core;AND-1;Kepler-22b;Nova;1200;AN
+8f1c2a10-4b3e-4c2d-9a1f-1a2b3c4d5e02;Comet Tail;3;Ion Drive;SOL-4;Mars;Deimos;800;MW

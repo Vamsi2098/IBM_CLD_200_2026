@@ -1,0 +1,4 @@
+callSign;homePlanet;missionsFlown;rank;ship_ID;sector;planet;moon;orbitAltitude;galaxyCode
+2d7e9b40-1c5a-4f8e-b3d2-6e7f8a9b0c01;Stardust;Earth;12;C;8f1c2a10-4b3e-4c2d-9a1f-1a2b3c4d5e01;SOL-3;Earth;Luna;400;MW
+2d7e9b40-1c5a-4f8e-b3d2-6e7f8a9b0c02;Nebula;Mars;7;P;8f1c2a10-4b3e-4c2d-9a1f-1a2b3c4d5e01;SOL-4;Mars;Phobos;350;MW
+2d7e9b40-1c5a-4f8e-b3d2-6e7f8a9b0c03;Bolt;Europa;3;E;8f1c2a10-4b3e-4c2d-9a1f-1a2b3c4d5e02;SOL-5;Jupiter;Europa;900;MW

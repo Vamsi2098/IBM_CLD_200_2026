@@ -1,0 +1,149 @@
+###Read service metadata
+GET http://localhost:4004/odata/v4/CatalogService/$metadata
+
+###Get all employees
+GET http://localhost:4004/odata/v4/CatalogService/EmployeeSet
+
+###Get Employee count
+GET http://localhost:4004/odata/v4/CatalogService/EmployeeSet/$count
+
+###Get 1 employee
+http://localhost:4004/odata/v4/CatalogService/EmployeeSet/02BD2137-0890-1EEA-A6C2-BB55C19927FB
+
+###Get Female records
+http://localhost:4004/odata/v4/CatalogService/EmployeeSet?$filter=sex eq 'F'/$count
+
+
+###
+GET http://localhost:4004/odata/v4/CatalogService/EmployeeSet?$filter=sex eq 'F'&$count=true
+
+###
+GET http://localhost:4004/odata/v4/CatalogService/EmployeeSet/$count?$filter=sex eq 'F'
+
+###
+GET http://localhost:4004/odata/v4/CatalogService/EmployeeSet?$filter= sex eq 'F'&$top=2&$skip=3&$select=nameFirst,email
+
+
+###Insert a employee
+POST http://localhost:4004/odata/v4/CatalogService/EmployeeSet
+Content-Type: application/json
+
+{
+      "nameFirst": "Vamsi",
+      "nameMiddle": null,
+      "nameLast": "Krishna",
+      "nameInitials": "S",
+      "sex": "M",
+      "language": "E",
+      "phoneNumber": "+1 224 374 524",
+      "email": "vk.ui5@sap.info",
+      "loginName": "VAMSIIK",
+      "Currency_code": "INR",
+      "salaryAmount": "5500000.00",
+      "accountNumber": "1112256733",
+      "bankId": "5100003",
+      "bankName": "State Bank of India"
+}
+
+###
+GET http://localhost:4004/odata/v4/CatalogService/EmployeeSet?$filter=nameFirst eq 'Vamsi'
+
+###Update a employee
+PATCH  http://localhost:4004/odata/v4/CatalogService/EmployeeSet/0b60440f-e172-4116-820b-24bada0ed4f9
+Content-Type: application/json
+
+{
+      "Currency_code": "INR",
+      "salaryAmount": "650000.00"
+}
+
+###Delete a employee
+DELETE   http://localhost:4004/odata/v4/CatalogService/EmployeeSet/0b60440f-e172-4116-820b-24bada0ed4f9
+
+###
+PATCH  http://localhost:4004/odata/v4/CatalogService/EmployeeSet/02BD2137-0890-1EEA-A6C2-BB55C19847FB
+Content-Type: application/json
+
+{
+      "Currency_code": "INR",
+      "salaryAmount": "645000.00"
+}
+
+###Display All purchase orders
+http://localhost:4004/odata/v4/CatalogService/POs
+
+###Display a purchase order
+http://localhost:4004/odata/v4/CatalogService/POs(74867AD200E41EDBA5D8B0C98DC40052)
+
+###Display a purchase order
+http://localhost:4004/odata/v4/CatalogService/POs/74867AD200E41EDBA5D8B0C98DC7E052/Items/$count
+
+###
+GET http://localhost:4004/odata/v4/CatalogService/POs('74867AD200E41EDBA5D8B0C98DC7E052')?$expand=Items
+
+###Boosting a order
+POST http://localhost:4004/odata/v4/CatalogService/POs('74867AD200E41EDBA5D8B0C98DC34052')/CatalogService.boost
+Content-Type: application/json
+
+{}
+
+###View a POs
+GET http://localhost:4004/odata/v4/CatalogService/getPOs()
+
+###get largest order
+GET http://localhost:4004/odata/v4/CatalogService/largestOrder()
+
+###get status 
+GET http://localhost:4004/odata/v4/CatalogService/getPOsByStatus()
+
+
+### Approve PO
+POST  http://localhost:4004/odata/v4/CatalogService/POs('74867AD200E41EDBA5D8B0C98DC40052')/CatalogService.approve
+Content-Type: application/json
+
+{}
+
+###
+POST  http://localhost:4004/odata/v4/CatalogService/ProductSet
+Content-Type: application/json
+
+{
+"NODE_KEY": "74867AD200E41EDBA5D8B06B26EB2098",
+"PRODUCT_ID": "HT-2098",
+"TYPE_CODE": "PR",
+"CATEGORY": "Notebooks",
+"DESCRIPTION": "Notebook Basic 15 with 2,80 GHz quad core, 15\" LCD, 4 GB DDR3 RAM, 500 GB Hard Disc, Windows 8 Pro                                                                                                                                                             ",
+"SUPPLIER_GUID_NODE_KEY": "74867AD200E41EDBA5D8B06885AB2052",
+"TAX_TARIF_CODE": 1,
+"MEASURE_UNIT": "EA",
+"WEIGHT_MEASURE": "4.20",
+"WEIGHT_UNIT": "KG",
+"CURRENCY_CODE": "EUR",
+"PRICE": "0.01",
+"WIDTH": "30.00",
+"DEPTH": "18.00",
+"HEIGHT": "3.00",
+"DIM_UNIT": "CM"
+}
+
+###
+PUT   http://localhost:4004/odata/v4/CatalogService/ProductSet('74867AD200E41EDBA5D8B06B26EB2098')
+Content-Type: application/json
+
+{
+"PRODUCT_ID": "HT-2098",
+"TYPE_CODE": "PR",
+"CATEGORY": "Notebooks",
+"DESCRIPTION": "Notebook Basic 15 with 2,80 GHz quad core, 15\" LCD, 4 GB DDR3 RAM, 500 GB Hard Disc, Windows 8 Pro                                                                                                                                                             ",
+"SUPPLIER_GUID_NODE_KEY": "74867AD200E41EDBA5D8B06885AB2052",
+"TAX_TARIF_CODE": 1,
+"MEASURE_UNIT": "EA",
+"WEIGHT_MEASURE": "4.20",
+"WEIGHT_UNIT": "KG",
+"CURRENCY_CODE": "EUR",
+"PRICE": "-100.01",
+"WIDTH": "30.00",
+"DEPTH": "18.00",
+"HEIGHT": "3.00",
+"DIM_UNIT": "CM"
+}
